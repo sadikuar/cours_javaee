@@ -10,10 +10,14 @@ import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import filters.TestFilter;
+import listeners.TestListener;
 
 /**
  * Servlet implementation class MyServlet
@@ -40,6 +44,7 @@ public class MyServlet extends HttpServlet {
 		String servletPath = request.getServletPath();
 		String pathInfo = request.getPathInfo();
 
+		// On utilise les etats pour stocker des informations temporaires car HTTP n'est pas un protocole a etat
 		HttpSession session = (HttpSession) request.getSession();
 
 		String first = "John E.";
@@ -85,6 +90,20 @@ public class MyServlet extends HttpServlet {
 			tmp = (String) session.getAttribute(att);
 			out.println(att + "= " + tmp + "<br>");
 		}
+		
+		Cookie cookie = new Cookie("myCookie", "value");
+		cookie.setMaxAge(100 * 1000 * 60); //100 seconds
+		response.addCookie(cookie);
+		
+		Cookie[] cookies = request.getCookies();
+		
+		for (Cookie c : cookies) {
+			out.println("name=" + c.getName() + " value=" + c.getValue());
+		}
+		
+		TestListener listener = new TestListener();
+		
+		TestFilter filter = new TestFilter();
 
 //		Set<Entry<String, String[]>> setParameters = mapParameters.entrySet();
 //		
