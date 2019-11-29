@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--<div th:each="name: ${names}">
+		<p th:text="'Hello, ' + ${name} + '!'" />
+	</div>-->
+	
+	<p th:if="${name} == 'Maverick'" th:text="'Hello, ' + ${name} + '! Team Ten'" />
+	<p th:unless="${name} == 'Maverick'" th:text="'Hello, ' + ${name} + '!'" />
+
+</body>
+</html>
