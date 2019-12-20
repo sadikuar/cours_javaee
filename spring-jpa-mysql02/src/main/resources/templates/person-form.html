@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Person form</title>
+</head>
+<body>
+	<h1>Form</h1>
+	<form action="#" th:action="@{/insert}" th:object="${person}" method="post">
+		<label for="lastname">Last name</label>
+		<input id="lastname" type="text" th:field="*{last}" />
+		
+		<label for="firstname">First name</label>
+		<input id="firstname" type="text" th:field="*{first}"/>
+		
+		<input type="reset" value="Reset fields" />
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>

@@ -4,6 +4,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.example.produit.model.Produit;
@@ -19,7 +21,7 @@ public class ProduitDAO {
 		produits.put(4, new Produit(9.99, "Tournevis"));
 	}
 
-	public List<Produit> getAllProduits() {
+	public List<Produit> getAllProduits() {		
 		return produits.values().stream().collect(Collectors.toList());
 	}
 	

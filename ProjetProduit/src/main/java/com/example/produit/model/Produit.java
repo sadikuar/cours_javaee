@@ -7,6 +7,10 @@ public class Produit {
 		this.nom = nom;
 	}
 	
+	public Produit() {
+		
+	}
+	
 	public double getPrix() {
 		return prix;
 	}
@@ -19,6 +23,19 @@ public class Produit {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Produit [prix=");
+		builder.append(prix);
+		builder.append(", nom=");
+		builder.append(nom);
+		builder.append("]");
+		return builder.toString();
+	}
+
 
 	private double prix;
 	private String nom;
