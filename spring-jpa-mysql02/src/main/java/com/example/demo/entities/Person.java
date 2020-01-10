@@ -24,7 +24,7 @@ public class Person {
 	private String last;
 	
 	@Column
-	private Date dateNaissance;
+	private String birthDate;
 	
 	public Person() {
 		
@@ -44,6 +44,14 @@ public class Person {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public void setFirst(String first) {

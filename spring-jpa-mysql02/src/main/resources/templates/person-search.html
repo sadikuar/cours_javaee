@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Person</title>
+</head>
+<body>
+	<form action="#" th:action="@{/person}" th:object="${person}" method="post">
+		<select id="personselect">
+			<option th:each="p: ${persons}" th:value="${p.id}" th:text="${p.first + ' ' + p.last}"></option>
+		</select>
+		<input id="submit" type="submit" value="Get person"/>
+	</form>
+</body>
+</html>
