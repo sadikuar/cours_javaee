@@ -29,6 +29,21 @@ public class Person {
 	public Person() {
 		
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Person [id=");
+		builder.append(id);
+		builder.append(", first=");
+		builder.append(first);
+		builder.append(", last=");
+		builder.append(last);
+		builder.append(", birthDate=");
+		builder.append(birthDate);
+		builder.append("]");
+		return builder.toString();
+	}
 
 	public Integer getId() {
 		return id;

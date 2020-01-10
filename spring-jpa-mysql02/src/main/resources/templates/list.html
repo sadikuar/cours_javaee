@@ -16,6 +16,7 @@
 			<tr th:each="person: ${persons}">
 				<td th:text="${person.last}" />
 				<td th:text="${person.first}" />
+				<td><a th:href="@{/search(personId=${person.id})}">show</a></td>
 			</tr>
 		</tbody>
 	</table>

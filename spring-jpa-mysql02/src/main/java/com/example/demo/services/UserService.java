@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service("userservice")
 public class UserService {
 
-	public int calculateAge(Date date) {
+	public int calculateAge(java.util.Date date) {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
 		int userBirthYear = calendar.get(Calendar.YEAR);
