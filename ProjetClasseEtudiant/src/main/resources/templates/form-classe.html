@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Ajout d'une classe</h1>
+	<form action="#" th:action="@{/insertClasse}" th:object="${classe}" method="post">
+		<label for="nom">Nom :</label>
+		<input id="nom" type="text" th:field="*{classeNom}">
+		
+		<!-- <label for="classes">Classe :</label>
+		<select id="classes" th:each="classe: ${classes}">
+			<option th:value="${classe.classeId}" th:text="${classe.classeNom}">
+		</select>-->
+		
+		<input type="submit" value="Ajouter">
+	</form>
+</body>
+</html>
