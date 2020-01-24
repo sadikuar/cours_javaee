@@ -47,7 +47,7 @@ public class EtudiantController {
 		
 //		System.out.println(etudiant);
 
-		return "form-etudiant";
+		return "redirect:/formEtudiant";
 	}
 
 }
