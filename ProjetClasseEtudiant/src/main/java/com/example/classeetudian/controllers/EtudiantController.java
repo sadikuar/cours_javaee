@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.expression.Lists;
 
 import com.example.classeetudian.entities.Classe;
@@ -43,6 +44,8 @@ public class EtudiantController {
 	@PostMapping("/insertEtudiant")
 	public String insertEtudiant(@ModelAttribute Etudiant etudiant) {
 		etudiantRepository.save(etudiant);
+		
+//		System.out.println(etudiant);
 
 		return "form-etudiant";
 	}

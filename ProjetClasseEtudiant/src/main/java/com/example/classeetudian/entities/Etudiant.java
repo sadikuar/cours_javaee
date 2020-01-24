@@ -47,16 +47,18 @@ public class Etudiant {
 		builder.append(nom);
 		builder.append(", prenom=");
 		builder.append(prenom);
+		builder.append(", classe=");
+		builder.append(classe);
 		builder.append("]");
 		return builder.toString();
 	}
 
-	public long getId() {
+	public long getEtudiantId() {
 		return etudiantId;
 	}
 
-	public void setId(long id) {
-		this.etudiantId = id;
+	public void setEtudiantId(long etudiantId) {
+		this.etudiantId = etudiantId;
 	}
 
 	public String getNom() {

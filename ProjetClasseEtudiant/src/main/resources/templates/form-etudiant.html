@@ -14,8 +14,10 @@
 		<input id="prenom" type="text" th:field="*{prenom}">
 		
 		<label for="classes">Classe :</label>
-		<select id="classes">
-			<option th:each="classe: ${classes}" th:value="${classe.classeId}" th:text="${classe.classeNom}" th:field="*{classe}">
+		<!-- If there is a ManytoOne relationship (done correctly -> see entities) then the field of the select needs to be the relation class !!! -->
+		<!-- see: https://stackoverflow.com/questions/29646133/posting-data-with-many-to-one-relationship-using-thymeleaf for same example -->
+		<select id="classes" th:field="*{classe}">
+			<option th:each="c: ${classes}" name="classeID" th:value="${c.classeId}" th:text="${c.classeNom}">
 		</select>
 		
 		<input type="submit" value="Ajouter">

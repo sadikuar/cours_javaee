@@ -12,6 +12,7 @@
 				<th>Id</th>
 				<th>Nom</th>
 				<th>Prenom</th>
+				<th>Classe</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -19,6 +20,7 @@
 				<td th:text="${etudiant.etudiantId}" />
 				<td th:text="${etudiant.nom}" />
 				<td th:text="${etudiant.prenom}" />
+				<td th:text="${etudiant.classe.classeNom}"/>
 			</tr>
 		</tbody>
 	</table>
